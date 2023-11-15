@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SetterBug.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout>
+        <Label>
+            <Label.Triggers>
+                <DataTrigger
+                    Binding="{Binding Model.IsSomething}"
+                    TargetType="Label"
+                    Value="True">
+                    <Setter Property="Text" Value="True text (Static)" />
+                    <Setter Property="TextColor" Value="{StaticResource GreenStatic}" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding Model.IsSomething}"
+                    TargetType="Label"
+                    Value="False">
+                    <Setter Property="Text" Value="False text (Static)" />
+                    <Setter Property="TextColor" Value="{StaticResource RedStatic}" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Label>
+            <Label.Triggers>
+                <DataTrigger
+                    Binding="{Binding Model.IsSomething}"
+                    TargetType="Label"
+                    Value="True">
+                    <Setter Property="Text" Value="True text (Dynamic)" />
+                    <Setter Property="TextColor" Value="{DynamicResource GreenDynamic}" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding Model.IsSomething}"
+                    TargetType="Label"
+                    Value="False">
+                    <Setter Property="Text" Value="False text (Dynamic)" />
+                    <Setter Property="TextColor" Value="{DynamicResource RedDynamic}" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Button Command="{Binding Command}" Text="Change bool" />
+    </StackLayout>
+</ContentPage>

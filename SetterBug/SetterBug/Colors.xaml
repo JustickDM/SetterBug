@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="SetterBug.Colors"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="RedDynamic">#FF453A</Color>
+    <Color x:Key="GreenDynamic">#30D158</Color>
+</ResourceDictionary>
